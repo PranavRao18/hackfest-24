@@ -1,12 +1,9 @@
 import React from 'react';
 import { Bar } from 'react-chartjs-2';
-import Chart from 'chart.js/auto';
+import Chart from 'chart.js/auto'
 
 const Charts = ({ transactions }) => {
-  // Extracting unique categories from transactions
   const uniqueCategories = [...new Set(transactions.map(transaction => transaction.category))];
-  
-  // Summing up amounts for each category
   const categoryTotals = uniqueCategories.map(category => {
     const totalAmount = transactions
       .filter(transaction => transaction.category === category)
@@ -26,8 +23,8 @@ const Charts = ({ transactions }) => {
   };
 
   return (
-    <div>
-      <h2>Spending Chart</h2>
+    <div className="bg-white p-4 rounded shadow-md">
+      <h2 className="text-xl font-bold mb-2">Spending Chart</h2>
       <Bar data={data} />
     </div>
   );

@@ -1,27 +1,43 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+import { Link } from 'react-router-dom';
 
-const RegistrationForm = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+const RegisterForm = () => {
+  const [details, setDetails] = useState({ name: '', email: '', password: '' });
 
-  const handleSubmit = async (e) => {
+  const handleChange = (e) => {
+    setDetails({ ...details, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post('/api/register', { email, password });
-      // Handle successful registration
-    } catch (error) {
-      // Handle registration error
-    }
+    // Handle registration logic
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
-      <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" />
-      <button type="submit">Register</button>
-    </form>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
+        <h2 className="text-2xl font-bold mb-6 text-center">Register</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <label className="block mb-1 font-medium" htmlFor="name">Name</label>
+            <input type="text" id="name" name="name" value={details.name} onChange={handleChange} className="w-full p-2 border rounded" required />
+          </div>
+          <div className="mb-4">
+            <label className="block mb-1 font-medium" htmlFor="email">Email</label>
+            <input type="email" id="email" name="email" value={details.email} onChange={handleChange} className="w-full p-2 border rounded" required />
+          </div>
+          <div className="mb-4">
+            <label className="block mb-1 font-medium" htmlFor="password">Password</label>
+            <input type="password" id="password" name="password" value={details.password} onChange={handleChange} className="w-full p-2 border rounded" required />
+          </div>
+          <button type="submit" className="w-full bg-green-600 text-white p-2 rounded">Register</button>
+        </form>
+        <p className="mt-4 text-center">
+          Already have an account? <Link to="/login" className="text-green-600">Login</Link>
+        </p>
+      </div>
+    </div>
   );
 };
 
-export default RegistrationForm;
+export default RegisterForm;
