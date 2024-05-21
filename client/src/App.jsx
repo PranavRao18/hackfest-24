@@ -4,13 +4,14 @@ import HomePage from './pages/HomePage';
 import DashboardPage from './pages/DashboardPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
-import { AuthProvider, useAuth } from './components/AuthContext';
-import Navbar from './components/Navbar';
 import Profile from './pages/Profile';
-import CommunityPage from './pages/CommunityPage';
-import ChallengesPage from './pages/ChallengesPage';
 import EducationPage from './pages/EducationPage';
 import IncentivesPage from './pages/IncentivesPage';
+import CommunityPage from './pages/CommunityPage';
+import ChallengesPage from './pages/ChallengesPage';
+import WearableData from './components/WearableData';
+import { AuthProvider, useAuth } from './components/AuthContext';
+import Navbar from './components/Navbar';
 
 const AuthRoute = ({ children }) => {
   const { isLoggedIn } = useAuth();
@@ -28,13 +29,15 @@ const App = () => (
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/dashboard" element={<PrivateRoute><DashboardPage /></PrivateRoute>} />
         <Route path="/login" element={<AuthRoute><LoginPage /></AuthRoute>} />
         <Route path="/register" element={<AuthRoute><RegisterPage /></AuthRoute>} />
         <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
-        <Route path="/challenges" element={<ChallengesPage />} />
-        <Route path="/education" element={<EducationPage />} />
-        <Route path="/incentives" element={<IncentivesPage />} />
+        <Route path="/education" element={<PrivateRoute><EducationPage /></PrivateRoute>} />
+        <Route path="/incentives" element={<PrivateRoute><IncentivesPage /></PrivateRoute>} />
+        <Route path="/community" element={<PrivateRoute><CommunityPage /></PrivateRoute>} />
+        <Route path="/challenges" element={<PrivateRoute><ChallengesPage /></PrivateRoute>} />
+        <Route path="/wearable" element={<PrivateRoute><WearableData /></PrivateRoute>} />
       </Routes>
     </BrowserRouter>
   </AuthProvider>

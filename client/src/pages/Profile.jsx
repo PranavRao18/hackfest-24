@@ -10,11 +10,15 @@ const Profile = () => {
         <h2 className="text-2xl font-bold mb-6 text-center">Profile</h2>
         <div className="mb-4">
           <label className="block mb-1 font-medium">Name</label>
-          <div className="border p-2 rounded">{user.name}</div>
+          <div className="border p-2 rounded">{user?.name}</div>
         </div>
         <div className="mb-4">
           <label className="block mb-1 font-medium">Email</label>
-          <div className="border p-2 rounded">{user.email}</div>
+          <div className="border p-2 rounded">{user?.email}</div>
+        </div>
+        <div className="mb-4">
+          <label className="block mb-1 font-medium">Points</label>
+          <div className="border p-2 rounded">{user?.points || 0}</div>
         </div>
         <button
           onClick={logout}

@@ -1,6 +1,7 @@
+// AuthContext.jsx
 import React, { createContext, useState, useContext } from 'react';
 
-const AuthContext = createContext();
+export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -16,8 +17,12 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
+  const addPoints = (points) => {
+    setUser((prevUser) => ({ ...prevUser, points: (prevUser.points || 0) + points }));
+  };
+
   return (
-    <AuthContext.Provider value={{ isLoggedIn, user, login, logout }}>
+    <AuthContext.Provider value={{ isLoggedIn, user, login, logout, addPoints }}>
       {children}
     </AuthContext.Provider>
   );
