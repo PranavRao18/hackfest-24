@@ -18,7 +18,7 @@ function Navbar() {
             window.scrollTo(0, 0);
           }}
         >
-          <p className="text-white text-[22px] font-medium cursor-pointer">EcoTracker</p>
+          <p className="text-white text-[22px] font-semibold cursor-pointer">EcoTracker</p>
         </Link>
         <div className="hidden sm:flex">
           {!isLoggedIn && (
@@ -46,7 +46,7 @@ function Navbar() {
                 <Link to="/challenges">Challenges</Link>
               </li>
               <li className="text-secondary hover:text-white text-[22px] font-light cursor-pointer">
-                <Link to="/education">Education</Link>
+                <Link to="/education">Articles</Link>
               </li>
               <li className="text-secondary hover:text-white text-[22px] font-light cursor-pointer">
                 <Link to="/incentives">Incentives</Link>
@@ -90,7 +90,7 @@ function Navbar() {
                   <Link to="/challenges" onClick={() => setToggle(false)}>Challenges</Link>
                 </li>
                 <li className="text-secondary font-poppins font-medium cursor-pointer text-[16px]">
-                  <Link to="/education" onClick={() => setToggle(false)}>Education</Link>
+                  <Link to="/education" onClick={() => setToggle(false)}>Articles</Link>
                 </li>
                 <li className="text-secondary font-poppins font-medium cursor-pointer text-[16px]">
                   <Link to="/incentives" onClick={() => setToggle(false)}>Incentives</Link>

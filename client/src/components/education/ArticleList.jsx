@@ -1,7 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import articles from '../../utils/constants';
 
-const ArticleList = ({ articles }) => {
+const ArticleList = () => {
   const navigate = useNavigate();
 
   const handleArticleClick = (articleId) => {

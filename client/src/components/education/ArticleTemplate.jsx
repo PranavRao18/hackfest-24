@@ -1,7 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import articles from '../../utils/constants';
 
-const ArticleTemplate = ({ articles }) => {
+const ArticleTemplate = () => {
   const { articleId } = useParams();
   const article = articles.find(article => article.id === articleId);
 
@@ -10,7 +11,7 @@ const ArticleTemplate = ({ articles }) => {
   }
 
   return (
-    <div>
+    <div className='mt-[120px]'>
       <h2>{article.title}</h2>
       <p>{article.content}</p>
       {/* Add more content fields as needed */}

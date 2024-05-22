@@ -6,13 +6,29 @@ const incentives = [
   // More incentives
 ];
 
+const generateCode = () => {
+  return Math.random().toString(36).substring(2, 12).toUpperCase();
+};
+
 const IncentiveList = () => {
   const [redeemed, setRedeemed] = useState(incentives.map(() => false));
+  const [codes, setCodes] = useState(incentives.map(() => ''));
+
   const handleRedeem = (index) => {
     const newRedeemed = [...redeemed];
+    const newCodes = [...codes];
     newRedeemed[index] = true;
+    newCodes[index] = generateCode();
     setRedeemed(newRedeemed);
-    alert("Your mom's number is the code to redeem :)");
+    setCodes(newCodes);
+  };
+
+  const handleCopy = (code) => {
+    navigator.clipboard.writeText(code).then(() => {
+      alert('Code copied to clipboard');
+    }, () => {
+      alert('Failed to copy code');
+    });
   };
 
   return (
@@ -24,13 +40,25 @@ const IncentiveList = () => {
         >
           <h3 className="text-lg font-semibold mb-2">{incentive.brand}</h3>
           <p className="text-lg font-semibold mb-2">{incentive.discount}</p>
-          <button
-            className={`bg-green-500 text-white px-4 py-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 ${redeemed[index] ? 'bg-gray-500 cursor-not-allowed' : 'hover:bg-green-600'}`}
-            onClick={() => handleRedeem(index)}
-            disabled={redeemed[index]}
-          >
-            {redeemed[index] ? 'Redeemed' : 'Redeem'}
-          </button>
+          {redeemed[index] ? (
+            <div>
+              <p className="m-4">Code: <span className='border-[2px] p-2 border-black rounded-[10px] text-green-500'>{codes[index]}</span></p>
+              <button
+                className="bg-green-500 text-white px-4 py-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 hover:bg-green-600"
+                onClick={() => handleCopy(codes[index])}
+              >
+                Copy Code
+              </button>
+              <p className="text-gray-500 mt-2">Expires in 10 days</p>
+            </div>
+          ) : (
+            <button
+              className={`bg-green-500 text-white px-4 py-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 hover:bg-green-600`}
+              onClick={() => handleRedeem(index)}
+            >
+              Redeem
+            </button>
+          )}
         </div>
       ))}
     </div>

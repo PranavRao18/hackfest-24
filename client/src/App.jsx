@@ -11,6 +11,7 @@ import CommunityPage from './pages/CommunityPage';
 import ChallengesPage from './pages/ChallengesPage';
 import EducationPage from './pages/EducationPage';
 import IncentivesPage from './pages/IncentivesPage';
+import ArticleTemplate from './components/education/ArticleTemplate';
 
 const AuthRoute = ({ children }) => {
   const { isLoggedIn } = useAuth();
@@ -34,6 +35,7 @@ const App = () => (
         <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
         <Route path="/challenges" element={<ChallengesPage />} />
         <Route path="/education" element={<EducationPage />} />
+        <Route path="/education/:articleId" element={<ArticleTemplate />} />
         <Route path="/incentives" element={<IncentivesPage />} />
       </Routes>
     </BrowserRouter>
