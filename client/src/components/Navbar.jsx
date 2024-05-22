@@ -52,6 +52,9 @@ function Navbar() {
                 <Link to="/incentives">Incentives</Link>
               </li>
               <li className="text-secondary hover:text-white text-[22px] font-light cursor-pointer">
+                <Link to="/wearable">Wearable Data</Link>
+              </li>
+              <li className="text-secondary hover:text-white text-[22px] font-light cursor-pointer">
                 <Link to="/profile">Profile</Link>
               </li>
             </ul>
@@ -94,6 +97,9 @@ function Navbar() {
                 </li>
                 <li className="text-secondary font-poppins font-medium cursor-pointer text-[16px]">
                   <Link to="/incentives" onClick={() => setToggle(false)}>Incentives</Link>
+                </li>
+                <li className="text-secondary font-poppins font-medium cursor-pointer text-[16px]">
+                  <Link to="/wearable" onClick={() => setToggle(false)}>Wearable Data</Link>
                 </li>
                 <li className="text-secondary font-poppins font-medium cursor-pointer text-[16px]">
                   <Link to="/profile" onClick={() => setToggle(false)}>Profile</Link>
