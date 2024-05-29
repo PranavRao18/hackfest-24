@@ -33,23 +33,23 @@ const WearableData = () => {
   }, [activityData, addPoints]);
 
   return (
-    <div className="min-h-screen bg-gray-100 pt-[120px]">
+    <div className="min-h-screen bg-black pt-[120px] text-white">
       <div className="container mx-auto p-4">
         <h1 className="text-2xl font-bold mb-4">Wearable Data</h1>
-        <div className="bg-white p-4 shadow rounded">
+        <div className="bg-gray-700 p-4 shadow rounded">
           <h2 className="text-xl font-semibold mb-4">Your Activities</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-green-200 p-4 rounded shadow-md">
+            <div className="bg-green-200 p-4 rounded shadow-md text-black">
               <h3 className="text-lg font-semibold mb-2">Steps</h3>
               <p className="text-gray-700">Steps: {activityData.steps}</p>
               <p className="text-gray-700">Points Earned: {points.steps}</p>
             </div>
-            <div className="bg-green-200 p-4 rounded shadow-md">
+            <div className="bg-green-200 p-4 rounded shadow-md text-black">
               <h3 className="text-lg font-semibold mb-2">Distance</h3>
               <p className="text-gray-700">Distance: {activityData.distance} km</p>
               <p className="text-gray-700">Points Earned: {points.distance}</p>
             </div>
-            <div className="bg-green-200 p-4 rounded shadow-md">
+            <div className="bg-green-200 p-4 rounded shadow-md text-black">
               <h3 className="text-lg font-semibold mb-2">Cycling</h3>
               <p className="text-gray-700">Cycling: {activityData.cycling} minutes</p>
               <p className="text-gray-700">Points Earned: {points.cycling}</p>

@@ -16,7 +16,7 @@ const ArticleList = () => {
           <div
             key={article.id}
             onClick={() => handleArticleClick(article.id)}
-            className="bg-white rounded-lg shadow-lg p-4 transition-transform transform hover:-translate-y-1 hover:shadow-xl cursor-pointer"
+            className="bg-gray-700 rounded-lg shadow-lg p-4 transition-transform transform hover:-translate-y-1 hover:shadow-xl cursor-pointer text-white"
           >
             <h3 className="text-lg font-semibold mb-2">{article.title}</h3>
             <p>{article.preview}</p>

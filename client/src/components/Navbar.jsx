@@ -9,7 +9,7 @@ function Navbar() {
   const { isLoggedIn, logout } = useAuth(); // Ensure useAuth returns isLoggedIn and logout functions
 
   return (
-    <nav className="p-8 sm:px-24 w-full flex items-center py-10 fixed top-0 z-20 bg-green-600 text-white">
+    <nav className="p-8 sm:px-24 w-full flex items-center py-10 fixed top-0 z-20 bg-green-300 text-black">
       <div className="w-full flex justify-between items-center mx-auto">
         <Link
           to="/"
@@ -18,7 +18,7 @@ function Navbar() {
             window.scrollTo(0, 0);
           }}
         >
-          <p className="text-white text-[22px] font-semibold cursor-pointer">EcoTracker</p>
+          <p className="text-[22px] font-semibold cursor-pointer">EcoTracker</p>
         </Link>
         <div className="hidden sm:flex">
           {!isLoggedIn && (
@@ -40,10 +40,10 @@ function Navbar() {
                 <Link to="/">Home</Link>
               </li>
               <li className="text-secondary hover:text-white text-[22px] font-light cursor-pointer">
-                <Link to="/dashboard">Dashboard</Link>
+                <Link to="/bank">Transactions</Link>
               </li>
               <li className="text-secondary hover:text-white text-[22px] font-light cursor-pointer">
-                <Link to="/challenges">Challenges</Link>
+                <Link to="/leaderboard">Leaderboards</Link>
               </li>
               <li className="text-secondary hover:text-white text-[22px] font-light cursor-pointer">
                 <Link to="/education">Articles</Link>
@@ -87,10 +87,10 @@ function Navbar() {
                   <Link to="/" onClick={() => setToggle(false)}>Home</Link>
                 </li>
                 <li className="text-secondary font-poppins font-medium cursor-pointer text-[16px]">
-                  <Link to="/dashboard" onClick={() => setToggle(false)}>Dashboard</Link>
+                  <Link to="/bank" onClick={() => setToggle(false)}>Transactions</Link>
                 </li>
                 <li className="text-secondary font-poppins font-medium cursor-pointer text-[16px]">
-                  <Link to="/challenges" onClick={() => setToggle(false)}>Challenges</Link>
+                  <Link to="/leaderboard" onClick={() => setToggle(false)}>Leaderboards</Link>
                 </li>
                 <li className="text-secondary font-poppins font-medium cursor-pointer text-[16px]">
                   <Link to="/education" onClick={() => setToggle(false)}>Articles</Link>

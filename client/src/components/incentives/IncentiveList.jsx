@@ -32,11 +32,12 @@ const IncentiveList = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+    <>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {incentives.map((incentive, index) => (
         <div
           key={incentive.brand}
-          className="bg-white rounded-lg shadow-lg p-4 transition-transform transform hover:-translate-y-1 hover:shadow-xl"
+          className="bg-gray-700 rounded-lg shadow-lg p-4 transition-transform transform hover:-translate-y-1 hover:shadow-xl text-white"
         >
           <h3 className="text-lg font-semibold mb-2">{incentive.brand}</h3>
           <p className="text-lg font-semibold mb-2">{incentive.discount}</p>
@@ -44,16 +45,16 @@ const IncentiveList = () => {
             <div>
               <p className="m-4">Code: <span className='border-[2px] p-2 border-black rounded-[10px] text-green-500'>{codes[index]}</span></p>
               <button
-                className="bg-green-500 text-white px-4 py-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 hover:bg-green-600"
+                className="bg-green-300 text-black px-4 py-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 hover:bg-green-600"
                 onClick={() => handleCopy(codes[index])}
               >
                 Copy Code
               </button>
-              <p className="text-gray-500 mt-2">Expires in 10 days</p>
+              <p className="text-gray-400 mt-2">Expires in 10 days</p>
             </div>
           ) : (
             <button
-              className={`bg-green-500 text-white px-4 py-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 hover:bg-green-600`}
+              className={`bg-green-300 text-black px-4 py-2 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 hover:bg-green-600`}
               onClick={() => handleRedeem(index)}
             >
               Redeem
@@ -62,6 +63,7 @@ const IncentiveList = () => {
         </div>
       ))}
     </div>
+    </>
   );
 };
 

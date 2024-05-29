@@ -2,7 +2,7 @@ import React from 'react';
 
 const TransactionList = ({ transactions }) => {
   return (
-    <div className="bg-white p-4 rounded shadow-md mb-4">
+    <div className="bg-gray-700 p-4 rounded shadow-md mb-4">
       <h2 className="text-xl font-bold mb-2">Transactions</h2>
       <ul>
         {transactions.map((transaction) => (

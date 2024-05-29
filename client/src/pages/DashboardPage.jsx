@@ -28,7 +28,7 @@ const DashboardPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100 pt-[120px]">
+    <div className="min-h-screen bg-black text-white pt-[120px]">
       <div className="container mx-auto p-4">
         <h1 className="text-2xl font-bold mb-4">Dashboard</h1>
         <PointsDisplay points={points} />

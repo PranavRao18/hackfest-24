@@ -17,13 +17,13 @@ const Charts = ({ transactions }) => {
       {
         label: 'Spending by Category',
         data: categoryTotals,
-        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+        backgroundColor: '#86efac',
       },
     ],
   };
 
   return (
-    <div className="bg-white p-4 rounded shadow-md">
+    <div className="bg-gray-700 p-4 rounded shadow-md">
       <h2 className="text-xl font-bold mb-2">Spending Chart</h2>
       <Bar data={data} />
     </div>

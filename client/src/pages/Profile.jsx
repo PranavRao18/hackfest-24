@@ -5,8 +5,8 @@ const Profile = () => {
   const { user, logout } = useAuth();
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-8">
-      <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center bg-black p-8 text-white">
+      <div className="bg-gray-700 p-8 rounded shadow-md w-full max-w-md">
         <h2 className="text-2xl font-bold mb-6 text-center">Profile</h2>
         <div className="mb-4">
           <label className="block mb-1 font-medium">Name</label>
