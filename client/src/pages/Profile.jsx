@@ -18,7 +18,7 @@ const Profile = () => {
         </div>
         <div className="mb-4">
           <label className="block mb-1 font-medium">Points</label>
-          <div className="border p-2 rounded">{user?.points || 0}</div>
+          <div className="border p-2 rounded">{220}</div>
         </div>
         <button
           onClick={logout}

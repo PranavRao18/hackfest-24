@@ -1,10 +1,18 @@
 import React, { useState } from 'react';
 
 const incentives = [
-  { brand: 'EcoStore', discount: '10% off for 100 green credits' },
-  { brand: 'GreenWear', discount: '15% off for 200 green credits' },
-  // More incentives
+  { brand: 'Levi’s', discount: '10% off for 100 green credits' },
+  { brand: 'Adidas', discount: '15% off for 200 green credits' },
+  { brand: 'Nature Threads', discount: '20% off for 150 green credits' },
+  { brand: 'SustainableStyle', discount: 'Buy 1 Get 1 Free for 250 green credits' },
+  { brand: 'Earthly Apparel', discount: '25% off for 300 green credits' },
+  { brand: 'Conscious Clothing', discount: '30% off for 350 green credits' },
+  { brand: 'RenewableWardrobe', discount: 'Free shipping for 100 green credits' },
+  { brand: 'EthicalEssentials', discount: '$20 voucher for 200 green credits' },
+  { brand: 'GreenFootprint', discount: '20% off for 150 green credits' },
+  { brand: 'Sustainably Yours', discount: 'Buy 2 Get 1 Free for 300 green credits' }
 ];
+
 
 const generateCode = () => {
   return Math.random().toString(36).substring(2, 12).toUpperCase();

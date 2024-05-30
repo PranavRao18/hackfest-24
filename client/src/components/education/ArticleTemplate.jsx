@@ -13,7 +13,7 @@ const ArticleTemplate = () => {
   return (
     <div className='pt-[120px] min-h-screen bg-black text-white'>
       <h2>{article.title}</h2>
-      <p>{article.content}</p>
+      <div dangerouslySetInnerHTML={{ __html: article.content }}></div>
       {/* Add more content fields as needed */}
     </div>
   );
