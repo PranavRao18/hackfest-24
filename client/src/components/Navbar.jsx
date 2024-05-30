@@ -18,7 +18,7 @@ function Navbar() {
             window.scrollTo(0, 0);
           }}
         >
-          <p className="text-[22px] font-semibold cursor-pointer">EcoTracker</p>
+          <p className="text-[22px] font-semibold cursor-pointer">GREENFOLIO</p>
         </Link>
         <div className="hidden sm:flex">
           {!isLoggedIn && (
@@ -52,7 +52,7 @@ function Navbar() {
                 <Link to="/incentives">Incentives</Link>
               </li>
               <li className="text-secondary hover:text-white text-[22px] font-light cursor-pointer">
-                <Link to="/wearable">Wearable Data</Link>
+                <Link to="/wearable">Activities</Link>
               </li>
               <li className="text-secondary hover:text-white text-[22px] font-light cursor-pointer">
                 <Link to="/profile">Profile</Link>
@@ -83,7 +83,7 @@ function Navbar() {
             )}
             {isLoggedIn && (
               <ul className="list-none flex justify-end items-start flex-col gap-4">
-                <li className="text-secondary font-poppins font-medium cursor-pointer text-[16px]">
+                <li className="text-secondary font-poppins font-semibold cursor-pointer text-[16px]">
                   <Link to="/" onClick={() => setToggle(false)}>Home</Link>
                 </li>
                 <li className="text-secondary font-poppins font-medium cursor-pointer text-[16px]">
@@ -99,7 +99,7 @@ function Navbar() {
                   <Link to="/incentives" onClick={() => setToggle(false)}>Incentives</Link>
                 </li>
                 <li className="text-secondary font-poppins font-medium cursor-pointer text-[16px]">
-                  <Link to="/wearable" onClick={() => setToggle(false)}>Wearable Data</Link>
+                  <Link to="/wearable" onClick={() => setToggle(false)}>Activities</Link>
                 </li>
                 <li className="text-secondary font-poppins font-medium cursor-pointer text-[16px]">
                   <Link to="/profile" onClick={() => setToggle(false)}>Profile</Link>
