@@ -11,9 +11,9 @@ const ArticleTemplate = () => {
   }
 
   return (
-    <div className='pt-[120px] min-h-screen bg-black text-white'>
-      <h2>{article.title}</h2>
-      <div dangerouslySetInnerHTML={{ __html: article.content }}></div>
+    <div className='pt-[120px] min-h-screen bg-black text-white p-28'>
+      <h2 className='text-5xl my-10 text-center'>{article.title}</h2>
+      <div dangerouslySetInnerHTML={{ __html: article.content }} className='text-xl'></div>
       {/* Add more content fields as needed */}
     </div>
   );
