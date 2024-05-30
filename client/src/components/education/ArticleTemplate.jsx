@@ -11,7 +11,7 @@ const ArticleTemplate = () => {
   }
 
   return (
-    <div className='mt-[120px]'>
+    <div className='pt-[120px] min-h-screen bg-black text-white'>
       <h2>{article.title}</h2>
       <p>{article.content}</p>
       {/* Add more content fields as needed */}

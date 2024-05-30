@@ -12,7 +12,7 @@ const Leaderboard = () => {
 
   return (
     <div className="bg-gray-900 text-white p-40 rounded shadow-md pt-[120px] min-h-screen">
-      <h2 className="text-2xl font-bold m-4">Leaderboard</h2>
+      <h2 className="text-2xl font-bold m-4">Daily Leaderboard</h2>
       <div className="flex flex-col space-y-4">
         {dummyData.map((user, index) => (
           <div
