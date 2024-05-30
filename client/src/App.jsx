@@ -1,3 +1,4 @@
+// src/App.jsx
 import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
@@ -13,6 +14,7 @@ import { AuthProvider, useAuth } from './components/AuthContext';
 import Navbar from './components/Navbar';
 import ArticleTemplate from './components/education/ArticleTemplate';
 import Leaderboard from './components/Leaderboard';
+import UploadsPage from './pages/UploadsPage'; // Import UploadsPage
 
 const AuthRoute = ({ children }) => {
   const { isLoggedIn } = useAuth();
@@ -40,6 +42,7 @@ const App = () => (
         <Route path="/education/:articleId" element={<ArticleTemplate />} />
         <Route path="/leaderboard" element={<PrivateRoute><Leaderboard /></PrivateRoute>} />
         <Route path="/wearable" element={<PrivateRoute><WearableData /></PrivateRoute>} />
+        <Route path="/uploads" element={<PrivateRoute><UploadsPage /></PrivateRoute>} /> {/* New Uploads Route */}
       </Routes>
     </BrowserRouter>
   </AuthProvider>
